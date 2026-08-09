@@ -14,5 +14,6 @@
 6. `06-circuit_breaker.py`
 7. `07-backpressure.py`
 8. `08-cap_consistency.py`
-9. `09-retry_visual.html`：本地离线状态变化图。
-10. `90-saleor_mapping.md`
+9. `09-architecture_evolution.md`：单体 → 模块化单体 → 服务拆分 → 分布式治理。
+10. `10-retry_visual.html`：本地离线状态变化图。
+11. `90-saleor_mapping.md`

@@ -12,7 +12,7 @@
 
 ## 生成什么
 
-先执行 `09-explain_analyze.sql` 创建实验表，然后在 `psql` 中执行：
+先执行 `10-explain_analyze.sql` 创建实验表，然后在 `psql` 中执行：
 
 ```sql
 EXPLAIN (ANALYZE, BUFFERS, VERBOSE, FORMAT JSON)
@@ -28,7 +28,7 @@ SELECT * FROM planner_events WHERE level = 'ERROR';
 3. 找到 `Seq Scan`、`Index Scan` 或 `Bitmap Heap Scan`。
 4. 比较 `Plan Rows` 与 `Actual Rows`；差距大说明基数估算不准。
 5. 展开节点详情，查看 buffers、loops 和过滤掉的行数。
-6. 回到 `09-explain_analyze.sql` 执行 `ANALYZE` 前后的两个计划，观察估算是否更接近实际。
+6. 回到 `10-explain_analyze.sql` 执行 `ANALYZE` 前后的两个计划，观察估算是否更接近实际。
 
 ## 为什么会这样
 

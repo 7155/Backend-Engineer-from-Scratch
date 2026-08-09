@@ -14,5 +14,6 @@
 6. `06-webhook_signature_replay.py`
 7. `07-saga_compensation.py`
 8. `08-transactional_outbox.py`
-9. `09-order_visual.html`：本地离线状态机与补偿动画。
-10. `90-saleor_mapping.md`
+9. `09-transaction_evolution.md`：订单记录怎样演化成状态机、补偿和 Outbox。
+10. `10-order_visual.html`：本地离线状态机与补偿动画。
+11. `90-saleor_mapping.md`

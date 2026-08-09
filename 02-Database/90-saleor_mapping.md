@@ -18,7 +18,8 @@ Saleor 负责表达业务查询、约束和事务边界；B+Tree 页分裂、WAL
 
 ## 当前源码观察点
 
-以官方 Saleor 主仓库为准，阅读时先固定你本地 checkout 的 commit：
+以本地只读 Saleor tag `3.23.25`、commit
+`bcb559a79ccafadb21bf9d337ef1dc6b74bd77a2` 为准：
 
 1. `saleor/checkout/models.py`
    - 找 `Checkout` 的字段索引和 `Meta.indexes`。

@@ -10,11 +10,13 @@
 4. `04-bplus_tree.py`：手写 insert/search/split/leaf link/range scan。
 5. `05-bplus_tree_visual.md`：用 Chalmers 动画亲眼看 leaf/root split。
 6. `06-index_basic.sql`：第一次在 PostgreSQL 建索引并看计划。
-7. `07-composite_index.sql`：最左前缀、范围截断、排序。
-8. `08-query_planner.py`：用 toy cost 理解 Seq Scan 与 Index Scan 的交叉点。
-9. `09-explain_analyze.sql`：看 estimated/actual rows、Buffers 和旧统计信息。
-10. `10-explain_visual.md`：把计划粘进离线 PEV2。
-11. `90-saleor_mapping.md`：再追 Saleor Model/Migration/QuerySet/SQL。
+7. `07-index_evolution.md`：全扫怎样演化到 B+Tree、复合索引和 Planner。
+8. `08-composite_index.sql`：最左前缀、范围截断、排序。
+9. `09-query_planner.py`：用 toy cost 理解 Seq Scan 与 Index Scan 的交叉点。
+10. `10-explain_analyze.sql`：看 estimated/actual rows、Buffers 和旧统计信息。
+11. `11-explain_visual.md`：把计划粘进离线 PEV2。
+12. `12-transaction_evolution.md`：后续事务批次的演化骨架。
+13. `90-saleor_mapping.md`：再追 Saleor Model/Migration/QuerySet/SQL。
 
 Python 自检：
 
@@ -23,7 +25,7 @@ python3 02-Database/01-page_io.py
 python3 02-Database/02-buffer_pool.py
 python3 02-Database/03-btree.py
 python3 02-Database/04-bplus_tree.py
-python3 02-Database/08-query_planner.py
+python3 02-Database/09-query_planner.py
 ```
 
 PostgreSQL：
@@ -31,8 +33,8 @@ PostgreSQL：
 ```bash
 docker compose up -d postgres
 docker compose exec -T postgres psql -U backend_lab -d backend_lab < 02-Database/06-index_basic.sql
-docker compose exec -T postgres psql -U backend_lab -d backend_lab < 02-Database/07-composite_index.sql
-docker compose exec -T postgres psql -U backend_lab -d backend_lab < 02-Database/09-explain_analyze.sql
+docker compose exec -T postgres psql -U backend_lab -d backend_lab < 02-Database/08-composite_index.sql
+docker compose exec -T postgres psql -U backend_lab -d backend_lab < 02-Database/10-explain_analyze.sql
 ```
 
 ## 国内面试关键词

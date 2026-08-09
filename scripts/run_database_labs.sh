@@ -16,8 +16,8 @@ fi
 
 sql_lessons=(
   "02-Database/06-index_basic.sql"
-  "02-Database/07-composite_index.sql"
-  "02-Database/09-explain_analyze.sql"
+  "02-Database/08-composite_index.sql"
+  "02-Database/10-explain_analyze.sql"
 )
 
 result_dir="$backend_lab_root/.lab/results"

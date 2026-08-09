@@ -5,7 +5,7 @@
 Seq cost   ≈ 全表页 + 全表行 CPU
 Index cost ≈ 树高随机页 + 匹配页随机访问 + 匹配行 CPU
 
-运行：python3 02-Database/08-query_planner.py
+运行：python3 02-Database/09-query_planner.py
 """
 
 from __future__ import annotations

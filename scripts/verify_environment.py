@@ -20,14 +20,49 @@ REQUIRED_CHAPTERS = (
     "10-Interview",
 )
 
+REQUIRED_ROOT_FILES = (
+    "README.md",
+    "STUDY_GUIDE.md",
+    "PROGRESS.md",
+    "ENGINEERING_EVOLUTION.md",
+    "QUESTION_TEMPLATE.md",
+    "SOURCE_INDEX.md",
+    "SALEOR_REFERENCE.md",
+    "SALEOR_SOURCE_INDEX.md",
+    "VISUAL_TOOLS.md",
+)
+
+EVOLUTION_FILES = (
+    "00-Computer/04-concurrency_evolution.md",
+    "01-Web/03-http_server_evolution.md",
+    "02-Database/07-index_evolution.md",
+    "02-Database/12-transaction_evolution.md",
+    "03-Redis/04-cache_evolution.md",
+    "04-Message-Queue/07-message_queue_evolution.md",
+    "05-Distributed-Systems/09-architecture_evolution.md",
+    "06-Transaction-Systems/09-transaction_evolution.md",
+    "07-Testing-Observability/06-observability_evolution.md",
+    "08-Deployment/08-deployment_evolution.md",
+)
+
+SALEOR_CASE_FILES = (
+    "09-Saleor-Case-Study/00-current-architecture.md",
+    "09-Saleor-Case-Study/01-2017-vs-current.md",
+    "09-Saleor-Case-Study/02-storefront-to-headless.md",
+    "09-Saleor-Case-Study/03-single-app-to-multi-pod.md",
+    "09-Saleor-Case-Study/04-architecture-tradeoffs.md",
+)
+
 FIRST_BATCH_FILES = (
     "00-Computer/01-process_thread_coroutine.py",
     "00-Computer/02-cpu_bound_vs_io_bound.py",
     "00-Computer/03-event_loop_visual.html",
+    "00-Computer/04-concurrency_evolution.md",
     "00-Computer/90-saleor_mapping.md",
     "01-Web/01-http_message.py",
     "01-Web/02-tiny_http_server.py",
-    "01-Web/03-wireshark_visual.md",
+    "01-Web/03-http_server_evolution.md",
+    "01-Web/04-wireshark_visual.md",
     "01-Web/90-saleor_mapping.md",
     "02-Database/01-page_io.py",
     "02-Database/02-buffer_pool.py",
@@ -35,11 +70,19 @@ FIRST_BATCH_FILES = (
     "02-Database/04-bplus_tree.py",
     "02-Database/05-bplus_tree_visual.md",
     "02-Database/06-index_basic.sql",
-    "02-Database/07-composite_index.sql",
-    "02-Database/08-query_planner.py",
-    "02-Database/09-explain_analyze.sql",
-    "02-Database/10-explain_visual.md",
+    "02-Database/07-index_evolution.md",
+    "02-Database/08-composite_index.sql",
+    "02-Database/09-query_planner.py",
+    "02-Database/10-explain_analyze.sql",
+    "02-Database/11-explain_visual.md",
+    "02-Database/12-transaction_evolution.md",
     "02-Database/90-saleor_mapping.md",
+    "03-Redis/04-cache_evolution.md",
+    "04-Message-Queue/07-message_queue_evolution.md",
+    "05-Distributed-Systems/09-architecture_evolution.md",
+    "06-Transaction-Systems/09-transaction_evolution.md",
+    "07-Testing-Observability/06-observability_evolution.md",
+    "08-Deployment/08-deployment_evolution.md",
 )
 
 LEGACY_CHAPTERS = (
@@ -73,9 +116,27 @@ def main() -> int:
         if not readme.is_file():
             errors.append(f"缺少 {chapter}/README.md")
 
+    for relative in REQUIRED_ROOT_FILES:
+        if not (root / relative).is_file():
+            errors.append(f"缺少根级教材文件 {relative}")
+
     for relative in FIRST_BATCH_FILES:
         if not (root / relative).is_file():
             errors.append(f"第一批缺少 {relative}")
+
+    for relative in EVOLUTION_FILES:
+        path = root / relative
+        if not path.is_file():
+            errors.append(f"缺少 Engineering Evolution 文件 {relative}")
+            continue
+        lesson = path.read_text(encoding="utf-8")
+        for marker in ("## Sources", "费曼"):
+            if marker not in lesson:
+                errors.append(f"{relative} 缺少 {marker}")
+
+    for relative in SALEOR_CASE_FILES:
+        if not (root / relative).is_file():
+            errors.append(f"缺少 Saleor 架构演化案例 {relative}")
 
     old_dirs = [root / name for name in LEGACY_CHAPTERS if (root / name).exists()]
     if old_dirs:

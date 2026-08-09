@@ -27,6 +27,23 @@ services:
     volumes:
       - backend_lab_redis:/data
 
+  rabbitmq:
+    image: rabbitmq:4-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: backend_lab
+      RABBITMQ_DEFAULT_PASS: backend_lab_only
+    ports:
+      - "55672:5672"
+      - "15673:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - backend_lab_rabbitmq:/var/lib/rabbitmq
+
 volumes:
   backend_lab_postgres:
   backend_lab_redis:
+  backend_lab_rabbitmq:

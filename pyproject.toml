@@ -3,14 +3,14 @@ name = "backend-engineer-from-scratch"
 version = "0.1.0"
 description = "Runnable backend engineering lessons and Feynman self-checks"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [dependency-groups]
 dev = ["ruff>=0.12,<1"]
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py312"
 line-length = 100
 
 [tool.ruff.lint]

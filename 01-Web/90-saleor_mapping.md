@@ -1,6 +1,7 @@
 # Saleor 映射：一次 GraphQL 请求
 
-参考 `saleor/saleor main`，网页核验日期 `2026-08-09`。
+固定参考 Saleor tag `3.23.25`，commit
+`bcb559a79ccafadb21bf9d337ef1dc6b74bd77a2`。
 
 ```text
 Uvicorn / ASGI
@@ -19,7 +20,7 @@ Uvicorn / ASGI
 - 同文件导入 `saleor/graphql/context.py` 的上下文函数，并记录请求、时长和 GraphQL query cost 等指标。
 - `saleor/graphql/api.py` 组合 Query、Mutation 和 schema；它不负责 socket accept/recv。
 
-固定版本后：
+本地追踪：
 
 ```bash
 rg -n 'graphql|GraphQLView' .references/saleor/saleor/urls.py

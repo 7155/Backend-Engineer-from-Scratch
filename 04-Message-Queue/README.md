@@ -12,9 +12,10 @@
 4. `04-retry_and_dlq.py`
 5. `05-idempotent_consumer.py`
 6. `06-transactional_outbox.py`
-7. `07-rabbitmq_visual.md`
-8. `08-kafka_partition.py`
-9. `09-kafka_ui_visual.md`
-10. `90-saleor_mapping.md`
+7. `07-message_queue_evolution.md`：同步调用怎样被故障一步步推到 Broker、ACK、幂等和 Outbox。
+8. `08-rabbitmq_visual.md`
+9. `09-kafka_partition.py`
+10. `10-kafka_ui_visual.md`
+11. `90-saleor_mapping.md`
 
 Visual Lab：RabbitMQ 官方 Management Plugin 观察 ready/unacked 和 rate；Kafbat UI 观察 Topic、Partition、Consumer Group 与 Lag。

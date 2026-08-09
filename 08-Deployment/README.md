@@ -13,6 +13,7 @@
 5. `05-health_readiness_liveness.py`
 6. `06-stateless_scaling.py`
 7. `07-kubernetes_basics.md`
-8. `08-backup_restore.md`
-9. `09-capacity_planning.py`
-10. `90-saleor_mapping.md`
+8. `08-deployment_evolution.md`：手工进程 → Docker → 多实例 → Kubernetes。
+9. `09-backup_restore.md`
+10. `10-capacity_planning.py`
+11. `90-saleor_mapping.md`

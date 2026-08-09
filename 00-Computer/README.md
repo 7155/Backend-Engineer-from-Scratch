@@ -7,7 +7,8 @@
 1. `01-process_thread_coroutine.py`：先看隔离、共享和调度单位。
 2. `02-cpu_bound_vs_io_bound.py`：再用计时区分计算与等待。
 3. `03-event_loop_visual.html`：离线逐步观察 `await` 如何让出执行权，以及 CPU 长任务怎样阻塞事件循环。
-4. `90-saleor_mapping.md`：最后区分 Saleor 在线 API 与 Celery worker 的运行入口。
+4. `04-concurrency_evolution.md`：顺序执行怎样演化到线程、协程、Worker 和多 Pod。
+5. `90-saleor_mapping.md`：最后区分 Saleor 在线 API 与 Celery worker 的运行入口。
 
 运行：
 

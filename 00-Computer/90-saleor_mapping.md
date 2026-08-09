@@ -1,6 +1,8 @@
 # Saleor 映射：在线请求与后台任务
 
-参考 `saleor/saleor main`，网页核验日期 `2026-08-09`；固定版本后再记录行号。
+固定参考 Saleor tag `3.23.25`，commit
+`bcb559a79ccafadb21bf9d337ef1dc6b74bd77a2`。路径和 symbol 已在本地只读
+checkout 核验；行号只用于当前版本，不跨版本引用。
 
 ## 在线 API
 
@@ -25,7 +27,7 @@ API 发布任务
 
 Celery worker 是独立运行入口。请求超时、任务投递成功、任务执行成功是三个状态；重试必须配幂等和可观测终态。
 
-## 固定版本后追踪
+## 本地追踪
 
 ```bash
 rg -n 'uvicorn|celery --app' .references/saleor/pyproject.toml
