@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+.lab/
+*.db
+*.sqlite3
+.references/
+*.pcap
+*.pcapng
+*.plan
+*.plan.json

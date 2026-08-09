@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: backend_lab
+      POSTGRES_USER: backend_lab
+      POSTGRES_PASSWORD: backend_lab_only
+    ports:
+      - "55432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U backend_lab -d backend_lab"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    volumes:
+      - backend_lab_postgres:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "56379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    volumes:
+      - backend_lab_redis:/data
+
+volumes:
+  backend_lab_postgres:
+  backend_lab_redis:
