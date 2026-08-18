@@ -46,4 +46,4 @@ SELECT attname, n_distinct, most_common_vals, most_common_freqs
 FROM pg_stats
 WHERE schemaname = 'public' AND tablename = 'planner_events';
 
--- 面试问题：为什么“建了索引却不走”可能是正确选择，也可能是统计信息过期？
+-- 练习题：为什么“建了索引却不走”可能是正确选择，也可能是统计信息过期？

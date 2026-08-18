@@ -105,7 +105,7 @@ if __name__ == "__main__":
 # 本实验没有 TLS、keep-alive、chunked、HTTP/2、并发、超时、大小限制、
 # backpressure 和 graceful shutdown。不要把它部署到公网；成熟 Server 负责这些协议细节。
 #
-# 面试问题
+# 练习提示
 # --------
 # WSGI/ASGI 是 Server 调用 Python 应用的契约，不是 TCP 本身。Uvicorn 负责连接和
 # HTTP 解析，Django/Saleor 接收结构化请求并运行 middleware、路由和业务代码。

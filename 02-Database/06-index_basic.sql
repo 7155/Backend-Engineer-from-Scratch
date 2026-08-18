@@ -49,4 +49,4 @@ FROM index_lab_orders
 WHERE created_at >= timestamptz '2025-01-03 00:00:00+00';
 
 -- 观察任务：不要只比较 Execution Time，还要比较 actual rows 和 shared hit/read blocks。
--- 面试追问：有索引后，为什么 PostgreSQL 仍可能选择 Seq Scan？
+-- 练习题：有索引后，为什么 PostgreSQL 仍可能选择 Seq Scan？
