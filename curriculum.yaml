@@ -1,0 +1,28 @@
+source_pin:
+  repository: saleor/saleor
+  tag: 3.23.25
+learner:
+  language: zh-CN
+  goal: understand transferable backend mechanisms through a production case study
+  style:
+    - purpose_before_terminology
+    - concrete_values_before_abstraction
+    - runtime_spine_before_folder_tour
+    - syntax_last
+contracts:
+  curriculum: working_baseline -> observable_failure -> mechanism -> evidence -> next_failure
+  lesson: big_picture -> anchor_example -> concrete_state -> mechanism -> code -> failure -> tradeoff -> exercises
+  code_walkthrough: caller -> input -> critical_lines -> state_before_after -> output -> failure
+  assessment: exercises_and_feynman_only
+chapters:
+  - 00-Computer
+  - 01-Web
+  - 02-Database
+  - 03-Redis
+  - 04-Message-Queue
+  - 05-Distributed-Systems
+  - 06-Transaction-Systems
+  - 07-Testing-Observability
+  - 08-Deployment
+  - 09-Saleor-Case-Study
+  - 10-Practice
